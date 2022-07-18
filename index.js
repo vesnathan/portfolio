@@ -16,7 +16,7 @@ const myDetails = {
 
 app.get("/contactDetails", (req,res) => { res.send(myDetails); });
 
-const secretKey = "6Ldf298gAAAAAHRuMz18-3vfN5ReMOSSNwuxBMNl";
+const secretKey = "";
 app.get("/recaptcha", (req,res) => { 
     
     axios.post('https://www.google.com/recaptcha/api/siteverify', undefined, {
