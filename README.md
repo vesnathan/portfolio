@@ -1,5 +1,5 @@
 
-# My Project <img src="https://img.shields.io/badge/License-GPLv3-blue.svg" />
+# My Portfolio and Resume
 
 ## CONTENTS
 
