@@ -5,33 +5,43 @@
 
 [1. DESCRIPTION](#DESCRIPTION)
 
-[2. INSTALLATION](#INSTALLATION)
+[2. SCREENSHOTS](#SCREENSHOTS)
 
-[3. USAGE](#USAGE)
+[3. INSTALLATION](#INSTALLATION)
 
-[4. CONTRIBUTE](#CONTRIBUTE)
+[4. USAGE](#USAGE)
 
-[5. TESTS](#TESTS)
+[5. CONTRIBUTE](#CONTRIBUTE)
 
-[6. LICENCE](#LICENCE)
+[6. TESTS](#TESTS)
 
-[7. QUESTIONS](#QUESTIONS)
+[7. LICENCE](#LICENCE)
+
+[8. QUESTIONS](#QUESTIONS)
 
 
 <a id="DESCRIPTION"></a>
 ## DESCRIPTION
 
-    This is a node.js project that creates a README.md file from given user inputs.
+    This is my personal resume and portfolio page.
+
+<a id="SCREENSHOTS"></a>
+## SCREENSHOTS
+<img src="Capture.JPG" />
+
+
+<img src="Capture2.JPG" />
+
 
 <a id="INSTALLATION"></a>
 ## INSTALLATION
 
-    Run npm install from the project durectory
+   Install Docker and Docker Compose on a server with SSL certificates
+   Copy these files to the server
 
 <a id="USAGE"></a>
 ## USAGE
-    run "node index.js" from the CLI in the project folder
- [YOUTUBE LINK](https://youtu.be/qHudqauDfNU)  
+    run "docker-compose -f docker-compose.yml -f docker-compose.prod.yml --build -d" from the CLI 
 
 <a id="CONTRIBUTE"></a>
 ## CONTRIBUTE
@@ -46,7 +56,7 @@
 <a id="LICENCE"></a>
 ## LICENCE
     
-[GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0)
+    Unlicenced
 	
 <a id="QUESTIONS"></a>
 ## QUESTIONS
