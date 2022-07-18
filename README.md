@@ -35,7 +35,7 @@
 <a id="INSTALLATION"></a>
 ## INSTALLATION
 
-    For a new Ubuntu 20 AWS Lightsail Instance  
+    For a new Ubuntu 20 AWS Lightsail Instance as of July 2022 
 
         sudo apt-get update  
         sudo mkdir -p /etc/apt/keyrings  
