@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--  link stylesheets --> 
+    <link   rel="stylesheet" 
+            href="./assets/css/reset.css">
+    <link   rel="stylesheet" 
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+            crossorigin="anonymous">
+    <link   rel="stylesheet" 
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link   rel="preconnect" 
+            href="https://fonts.googleapis.com">
+    <link   rel="preconnect" 
+            href="https://fonts.gstatic.com" 
+            crossorigin>
+    <link   href="https://fonts.googleapis.com/css2?family=The+Nautigal&display=swap" 
+            rel="stylesheet"> 
+    <link   rel="stylesheet" 
+            href="./assets/css/style.css">
+
+    <!-- import scripts -->
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=6Ldf298gAAAAAPOMeIj62wcusoDZy9TzHDZsBTCC" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" 
+            crossorigin="anonymous">
+    </script>
+    <script src="./assets/js/script.js" ></script>
+
+    <!-- title is updated dynamically -->
+    <title></title>
+
+</head>
+<body>
+
+    <!----------------------------------------------------------------------------------------- RECAPTCHA -->
+
+    <!--  using recaptcha to verify human before displaying contact details -->
+    <div id="myReCaptcha"></div>
+
+    <!----------------------------------------------------------------------------------------- MODAL -->
+
+    <div class="modal fade" id="mainModal" tabindex="-1" aria-labelledby="mainModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header"></div>
+                <div class="modal-body"></div>
+                <div class="modal-footer d-flex"></div>
+            </div>
+        </div>
+    </div>
+
+    <!----------------------------------------------------------------------------------------- END MODAL -->
+
+    <div    
+        id="mainWrapper"
+        class="
+            d-flex
+            flex-row
+            flex-wrap
+            justify-content-center
+            ">
+
+        <!----------------------------------------------------------------------------------------- LEFT SIDE -->
+
+        <section    
+            id="leftSide"
+            class="
+                col-12
+                col-sm-8
+                col-md-4
+                col-lg-3
+                p2
+                h-100">
+
+            <!----------------------------------------------------------------------------------------- PHOTO -->
+
+            <div    
+                id="photoWrapper"
+                class="
+                    d-flex
+                    col-8
+                    justify-content-center
+                    mt-4">
+                <div id="photo"></div>
+            </div>
+            <h1 class="name"><strong>NATE LOUDON</strong></h1>
+            
+            <p id="subTitle">Full-Stack MERN Web Development</p>
+            <p id="brandStatement">I'm a junior full stack web developer with a passion for creating user-friendly online experiences!</p>
+                        
+            <!----------------------------------------------------------------------------------------- MENU -->
+
+            <nav class="d-flex mt-5 noPrint w-100 d-block d-md-none justify-content-center">
+                <ul class="smallScreenMenuUl">
+                    <li class="smallScreenMenuLiButton" id="resume">Resume</li>
+                    <li class="smallScreenMenuLiButton" id="portfolio">Portfolio</li>
+                </ul>
+            </nav>
+
+            <!----------------------------------------------------------------------------------------- CONTACT -->
+            
+            <article class="d-flex flex-row flex-wrap"> 	
+
+                <div   
+                    class="
+                        d-flex
+                        h3Decoration 
+                        col-12
+                        justify-content-start
+                        mt-5"
+                    data-h3="
+                        contact">
+                    <h3>
+                        <strong>CONTACT</strong>
+                        
+                    </h3>
+                    <hr>
+                </div>
+
+
+                <div  
+                    id="contactArticle" 
+                    class="d-flex flex-row flex-wrap col-12 justify-content-start align-items-center p-0" >			
+                    <div
+                        id="contactDivSpinner"
+                        class="d-none flex-row flex-wrap col-12 justify-content-center align-items-center ">
+
+                        <div class="spinner-border" role="status"></div>
+                    </div>
+                
+
+
+                    <div 
+                        id="contactDetailsDiv"
+                        class="
+                            cardContentLeft mt-4  mb-5 col-12 p-0">
+                            
+                         <table 
+                            id="contactDetailsTable"
+                            class="
+                                w-100
+                                d-none">
+                            <tr>
+                                <td id="phoneIcon"      class="iconTd"      >&nbsp;</td>
+                                <td id="phoneContent"   class="contentTd"   >&nbsp;</td>
+                            <tr>
+                                <td id="emailIcon"      class="iconTd"      >&nbsp;</td>
+                                <td id="emailContent"   class="contentTd"   >&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td id="addressIcon"    class="iconTd"      >&nbsp;</td>
+                                <td id="addressContent" class="contentTd"   >&nbsp;</td>
+                            </tr>
+                        </table> 
+
+
+
+
+
+                    </div>
+                </div>
+            </article>
+
+            <!----------------------------------------------------------------------------------------- SKILLS -->
+            <article> 
+                <div   
+                    class="
+                        d-flex
+                        h3Decoration 
+                        col-12
+                        justify-content-start
+                        mt-5"
+                    data-h3="
+                        skills">
+                    <h3><strong>SKILLS</strong></h3>
+                    <hr>
+                </div>
+                <div 
+                    class="
+                        cardContentLeft
+                        mt-4 
+                        mb-4">
+                    <div 
+                        id="languageSkillsWrapper"
+                        class="
+                            d-flex
+                            flex-row
+                            flex-wrap
+                            w-100
+                            m-0
+                            p-0">
+
+                        
+                    </div>
+                </div>
+            </article>
+
+            <!----------------------------------------------------------------------------------------- INTERESTS -->      
+
+            <article 
+                class=" 
+                    d-none
+                    d-md-block">
+                <div    
+                    class="
+                        d-flex
+                        h3Decoration
+                        col-12
+                        justify-content-start
+                        mt-5"
+                    data-h3="
+                        interests">
+                    <h3><strong>INTERESTS</strong></h3>
+                    <hr>
+                </div>
+                <div class="cardContentLeft mt-4 mb-4">
+                    <ul>
+                        <li class="ml-4 pl-3 pt-1">WEB DESIGN</li>
+                        <li class="ml-4 pl-3 pt-1">ELECTRONICS PROTOTYPING</li>
+                        <li class="ml-4 pl-3 pt-1">ASTROPHOTOGRAPHY</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!----------------------------------------------------------------------------------------- CONNECT -->
+
+            <article 
+                class=" 
+                    d-none
+                    d-md-block"> 
+                <div   
+                    class="
+                        d-flex
+                        h3Decoration 
+                        col-12
+                        justify-content-start
+                        mt-5"
+                    data-h3="
+                        connect">
+                    <h3><strong>CONNECT</strong></h3>
+                    <hr>
+                </div>
+                <div 
+                    class="
+                        cardContentLeft
+                        mt-4
+                        mb-5">
+                    <table class="w-100">
+                        <tr>
+                            <td class="iconTd noPrint">
+                                <i class="bi bi-github"></i>
+                            </td>
+                            <td class="contentTd noPrint">
+                                <a href="https://www.github.com/vesnathan" target="_blank">GitHub</a>
+                            </td>
+                            <td class="print">github.com/vesnathan</td>
+                        </tr>
+                        <tr>
+                            <td class="iconTd noPrint">
+                                <i class="bi bi-linkedin"></i>
+                            </td>
+                            <td class="contentTd noPrint">
+                                <a href="https://www.linkedin.com/in/nathan-loudon-719b3723/" target="_blank">LinkedIn</a>
+                            </td>
+                            <td class="print">linkedin.com/in/nathan-loudon-719b3723/</td>
+                        </tr>
+                    </table>
+                </div>
+            </article>
+        </section>
+
+        <!----------------------------------------------------------------------------------------- RIGHT SIDE -->
+
+        <section    
+            id="rightSide"
+            class="
+                flex-row
+                flew-wrap
+                col-12
+                col-sm-8
+                col-xl-6
+                "> 
+            <!----------------------------------------------------------------------------------------- MENU -->
+
+            <nav class="w-100 d-none d-md-block noPrint">
+                <ul class="bigScreenMenuUl">
+                    <li class="bigScreenMenuLiButton" id="resume">Resume</li>
+                    <li class="bigScreenMenuLiButton" id="portfolio">Portfolio</li>
+                </ul>
+                <div id="menuIconHolder">
+                    <i id="printButton" class="bi bi-printer"></i>
+                    <!-- <i id="emailButton" class="bi bi-envelope"></i> -->
+                </div>
+            </nav>
+            
+
+            <!----------------------------------------------------------------------------------------- GSB -->
+            <a id="mainContentAnchor"></a>
+            <a id="gameShowBuzzerAnchor"></a>
+            <div id="portfolioWrapper" class="menuItemContent">
+                <div  
+                    class="
+                        d-flex
+                        h2Decoration 
+                        col-12
+                        justify-content-start
+                        mt-5
+                        " 
+                    data-h2="
+                        Portfolio">
+                    <h2><strong>GAME SHOW BUZZER</strong></h2>
+                </div>
+                <article    
+                    class="
+                        d-flex
+                        flex-row
+                        flex-wrap
+                        justify-content-end
+                        cardContentRight
+                        my-5">
+                    <div    
+                        class="
+                            p-0
+                            col-12
+                            cardContentRightImg
+                            gsb">
+                        <div    
+                            class="
+                                p-4
+                                col-12
+                                col-sm-6
+                                col-lg-4
+                                cardContentRightTechnology
+                                h-100">
+                            <h4>TECHNOLOGY</h4>
+                            <ul>
+                                <li class="ml-4 pl-3">HTML</li>
+                                <li class="ml-4 pl-3">CSS</li>
+                                <li class="ml-4 pl-3">JQuery</li>
+                                <li class="ml-4 pl-3">Node.js</li>
+                                <li class="ml-4 pl-3">Express</li>
+                                <li class="ml-4 pl-3">Websocket.io</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div    
+                        class="
+                            col-12
+                            mt-4
+                            justify-content-center
+                            cardContentRightText">
+                        <p>This game show buzzer system allows users to join the session via their phone to buzz in. there are unlimited teams, with unlimited players in each team.</p>
+                        <p>The leaderboard keeps track of the teams scores, and shows who buzzed in.</p>
+                        <p>The player screen shows the teams name and score. Each team can have their own image as a background.</p>
+                        <p>The system also includes a webpage for incorporation into PowerPoint.</p>
+                        <p>Please contact me for a password to access the demonstration save.</p>
+                            
+                    </div>
+                    <div class="buttonHolder d-flex w-100 justify-content-center">
+                        <a  href="http://52.62.156.187:3000/demo.html"
+                            class="
+                                p-2 
+                                m-2
+                                col-md-4
+                                col-lg-3
+                                col-xl-3 
+                                border-0
+                                button
+                                noPrint"
+                            target="_blank">
+                            <span>LIVE DEMO</span></a>
+                            
+                        <a  href="https://github.com/vesnathan/GameShowBuzzer"
+                            class="
+                                p-2 
+                                m-2 
+                                col-md-4
+                                col-lg-3
+                                col-xl-3
+                                border-0
+                                button
+                                noPrint"
+                            target="_blank">
+                            <span>GITHUB REPO</span></a>
+                    </div>
+                    <div class="print w-100">
+                        <table class="w-100">
+                            <tr class="p-5"><td>LIVE DEMO: </td><td>52.62.156.187:3000/demo.html</td></tr>
+                            <tr class="p-5"><td>GITHUB: </td><td>github.com/vesnathan/GameShowBuzzer</td></tr>
+                        </table>
+                    </div>
+                </article>
+
+                <!----------------------------------------------------------------------------------------- TIMER -->
+                <a id="presentationTimerAnchor"></a>
+                <div    
+                    class="
+                        d-flex
+                        h2Decoration 
+                        col-12
+                        justify-content-start
+                        mt-5
+                        " 
+                    data-h2="
+                        Portfolio">
+                    <h2><strong>EVENT PRODUCTION TIMER</strong></h2>
+                </div>
+                <article    
+                    class="
+                        d-flex
+                        flex-row
+                        flex-wrap
+                        justify-content-end
+                        cardContentRight
+                        my-5">
+                    <div    
+                        class="
+                            p-0
+                            col-12
+                            cardContentRightImg
+                            timer">
+                        <div    
+                            class="
+                                p-4
+                                col-12
+                                col-sm-6
+                                col-lg-4
+                                cardContentRightTechnology
+                                h-100">
+                            <h4>TECHNOLOGY</h4>
+                            <ul>
+                                <li class="ml-4 pl-3">HTML</li>
+                                <li class="ml-4 pl-3">CSS</li>
+                                <li class="ml-4 pl-3">JQuery</li>
+                                <li class="ml-4 pl-3">Node.js</li>
+                                <li class="ml-4 pl-3">Express</li>
+                                <li class="ml-4 pl-3">Websocket.io</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div    
+                        class="
+                            col-12
+                            mt-4
+                            justify-content-center
+                            cardContentRightText">
+                        <p>The client requested a web based timer system that would allow a session chair to control the timer from side of stage.</p>
+                        <p>The system allows multiple timers for multiple rooms and includes a main monitoring screen where event organisers can monitor sessions.</p>
+                        <p>Each timer screen can have it's CSS modified via the controll screen, including uploading of background images, and control of the timer can be transfered between devices.</p>
+                            
+                    </div>
+                    <div 
+                        class="
+                            buttonHolder 
+                            d-flex 
+                            w-100 
+                            justify-content-center">
+                        <a  href="http://54.66.111.53:3000/timer/demo.html"
+                            class="
+                                p-2 
+                                m-2
+                                col-md-4
+                                col-lg-3
+                                col-xl-3 
+                                border-0
+                                button
+                                noPrint"
+                            target="_blank">
+                            <span>LIVE DEMO</span>                            
+                        </a>
+                        <a  href="https://github.com/vesnathan/presentationTimer"
+                            class="
+                                p-2 
+                                m-2 
+                                col-md-4
+                                col-lg-3
+                                col-xl-3
+                                border-0
+                                button
+                                noPrint"
+                            target="_blank">
+                            <span>GITHUB REPO</span>
+                        </a>
+                    </div>
+                    <div class="print w-100">
+                        <table class="w-100">
+                            <tr class="p-5"><td>LIVE DEMO: </td><td>54.66.111.53:3000/timer/demo.html</td></tr>
+                            <tr class="p-5"><td>GITHUB: </td><td>github.com/vesnathan/presentationTimer</td></tr>
+                        </table>
+                    </div>
+                </article>
+
+                <!----------------------------------------------------------------------------------------- ONLINE EVENT PLATFORM -->
+                <a id="onlineEventPlatformAnchor"></a>
+                <div    
+                    class="
+                        d-flex
+                        h2Decoration 
+                        col-12
+                        justify-content-start
+                        mt-5
+                        " 
+                    data-h2="
+                        Portfolio">
+                    <h2><strong>ONLINE EVENT PLATFORM</strong></h2>
+                </div>
+                <article    
+                    class="
+                        d-flex
+                        flex-row
+                        flex-wrap
+                        justify-content-end
+                        cardContentRight
+                        my-5">
+                    <div    
+                        class="
+                            p-0
+                            col-12
+                            cardContentRightImg
+                            eventPlatform">
+                        <div    
+                            class="
+                                p-4
+                                col-12
+                                col-sm-6
+                                col-lg-4
+                                cardContentRightTechnology
+                                h-100">
+                            <h4>TECHNOLOGY</h4>
+                            <ul>
+                                <li class="ml-4 pl-3">HTML</li>
+                                <li class="ml-4 pl-3">CSS</li>
+                                <li class="ml-4 pl-3">React</li>
+                                <li class="ml-4 pl-3">Node.js</li>
+                                <li class="ml-4 pl-3">Express</li>
+                                <li class="ml-4 pl-3">Websocket.io</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div    
+                        class="
+                            col-12
+                            mt-4
+                            justify-content-center
+                            cardContentRightText">
+                        <p>This system allows you to create a front end for online event attendees.</p>
+                        <p>It includes chat functionality for the main event, as well a seperately for each session.</p>
+                        <p>Live video can be streamed to the sessions via either Vimeo or Youtube</p>
+                        <p>On Demand video can be set to run at a specific time.</p>
+                    </div>
+                    <div 
+                        class="
+                            buttonHolder 
+                            d-flex 
+                            w-100 
+                            justify-content-center">
+                        <a  href="https://www.scvideo.com.au/events/lGDFR72xan/ImyftecmJE"
+                            class="
+                                p-2 
+                                m-2
+                                col-md-4
+                                col-lg-3
+                                col-xl-3 
+                                border-0
+                                button
+                                noPrint"
+                            target="_blank">
+                            <span>LIVE DEMO</span> 
+                        </a>
+                        <a  href=""
+                            class="
+                                p-2 
+                                m-2 
+                                col-md-4
+                                col-lg-3
+                                col-xl-3
+                                border-0
+                                button
+                                noPrint"
+                            target="_blank">
+                            <span>GITHUB REPO</span>   
+                            
+                        </a>
+                    </div>
+                    <div class="print w-100">
+                        <table class="w-100">
+                            <tr class="p-5"><td>LIVE DEMO: </td><td>scvideo.com.au/events/lGDFR72xan</td></tr>
+                            <tr class="p-5"><td>GITHUB: </td><td></td></tr>
+                        </table>
+                    </div>
+                </article>
+
+                <!----------------------------------------------------------------------------------------- CHEAP DATE -->
+                <a id="cheapDateAnchor"></a>
+                <div    
+                    class="
+                        d-flex
+                        h2Decoration 
+                        col-12
+                        justify-content-start
+                        mt-5
+                        " 
+                    data-h2="
+                        Portfolio">
+                    <h2><strong>CHEAP DATE - YOUR AT HOME BAR</strong></h2>
+                </div>
+                <article    
+                    class="
+                        d-flex
+                        flex-row
+                        flex-wrap
+                        justify-content-end
+                        cardContentRight
+                        my-5">
+                    <div    
+                        class="
+                            p-0
+                            col-12
+                            cardContentRightImg
+                            cheapDate">
+                        <div    
+                            class="
+                                p-4
+                                col-12
+                                col-sm-6
+                                col-lg-4
+                                cardContentRightTechnology
+                                h-100">
+                            <h4>TECHNOLOGY</h4>
+                            <ul>
+                                <li class="ml-4 pl-3">HTML</li>
+                                <li class="ml-4 pl-3">CSS</li>
+                                <li class="ml-4 pl-3">Bootstrap</li>
+                                <li class="ml-4 pl-3">JQuery</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div    
+                        class="
+                            col-12
+                            mt-4
+                            justify-content-center
+                            cardContentRightText">
+                        <p>We are a bunch of university students currently learning coding! this website was built as one of our first projects, where we were given the task of incorporating the skills we've learnt throughout the past 6 weeks.</p>
+                        <p>We wanted to create something that was fun and easy to use, while informative at the same time. we realised that the vast majority of people who enjoy cocktails usually drink them when out at a restaurant or bar. but what if someone doesn't feel like going out just to enjoy their favourite cocktail? that's where we come in.</p>
+                        <p>We allow users to search for their favourite cocktail, browse the numerous recipes we have to offer, or create their own with the alcohol they already have! we not only display the recipe and required ingredients, but also the average price the user would pay if they were to go out and buy everything they dont already have.</p>      
+                    </div>
+                    <div class="buttonHolder d-flex w-100 justify-content-center">
+                        <a  href="https://vesnathan.github.io/cheap-date/"
+                            class="
+                                p-2 
+                                m-2
+                                col-md-4
+                                col-lg-3
+                                col-xl-3 
+                                border-0
+                                button
+                                noPrint"
+                            target="_blank">
+                            <span>LIVE DEMO</span> 
+                            
+                        </a>
+                        <a  href="https://github.com/vesnathan/cheap-date"
+                            class="
+                                p-2 
+                                m-2 
+                                col-md-4
+                                col-lg-3
+                                col-xl-3
+                                border-0
+                                button
+                                noPrint"
+                            target="_blank">
+                            <span>GITHUB REPO</span>
+                        </a>
+                    </div>
+                    <div class="print w-100">
+                        <table class="w-100">
+                            <tr class="p-5"><td>LIVE DEMO: </td><td>vesnathan.github.io/cheap-date/</td></tr>
+                            <tr class="p-5"><td>GITHUB: </td><td>github.com/vesnathan/cheap-date</td></tr>
+                        </table>
+                    </div>
+                </article>
+            </div>
+
+            <!----------------------------------------------------------------------------------------- RESUME -->
+
+            <div 
+                id="resumeWrapper"
+                class="menuItemContent">
+
+                <!----------------------------------------------------------------------------------------- PROFILE -->
+
+                <div    
+                    class="
+                        d-flex
+                        h2Decoration 
+                        col-12
+                        justify-content-start
+                        mt-5
+                        " 
+                    data-h2="
+                        Resume">
+                    <h2><strong>PROFILE</strong></h2>
+                </div>
+
+                <article    
+                    class="
+                        d-flex
+                        flex-row
+                        flex-wrap
+                        justify-content-end
+                        cardContentRight
+                        my-5
+                        pl-5">
+                    <ul>
+                        <li>Highly motivated self taught full stack Web Developer seeking junior role in order to further my skills</li>
+                        <li>Recently completed a certificate in Full Stack Web Development in order to learn industry standard practice and developing software in a team environment</li>
+                        <li>Knowledgeable in user interface design, back-end processes, and testing and debugging</li>
+                        <li>Proficient in an assortment of technologies, including HTML, CSS, JavaScript, Node.JS, Express, React, MySQL, PHP, and MongoDB</li>
+                        <li>Able to effectively self-manage during independent projects, as well as collaborate in a team setting</li>
+                        <li>I enjoy researching solutions to problems, and learning new skills to execute solutions</li>
+                        <li>Prioritising and delegation of tasks to ensure deadlines are met.
+                    </ul>
+                </article>
+
+                <!----------------------------------------------------------------------------------------- SKILLS TABLE SLIDERS -->
+
+
+                <article 
+                    id="personalSkillsWrapper"   
+                    class="
+                        d-flex
+                        flex-row
+                        flex-wrap
+                        justify-content-around
+                        cardContentRight
+                        my-5">
+                </article> 
+
+                <!----------------------------------------------------------------------------------------- WORK EXPERIENCE -->
+
+                <div    
+                    class="
+                        d-flex
+                        h2Decoration 
+                        col-12
+                        justify-content-start
+                        mt-5
+                        " 
+                    data-h2="
+                        Resume">
+                    <h2><strong>WORK EXPERIENCE</strong></h2>
+                </div>
+
+                <div id="workHistory" class="workHistory"></div>
+
+               <!----------------------------------------------------------------------------------------- SOFTWARE SKILLS --> 
+
+                <div    
+                    class="
+                        d-flex
+                        h2Decoration 
+                        col-12
+                        justify-content-start
+                        mt-5
+                        " 
+                    data-h2="
+                        Resume">
+                    <h2><strong>SOFTWARE</strong></h2>
+                </div>
+
+                
+
+                <article 
+                    id="otherSkillsArticle"   
+                    class="
+                        d-flex
+                        flex-row
+                        flex-wrap
+                        justify-content-around
+                        cardContentRight
+                        my-5">
+                    
+                        
+                    
+                </article> 
+            </div>
+        </section>
+
+        <!----------------------------------------------------------------------------------------- FOOTER -->
+
+
+        <footer 
+            class="
+                w-100 
+                d-flex 
+                flex-wrap 
+                col-12 
+                col-sm-8
+                col-md-10
+                pb-3
+                pt-2
+                mt-4 
+                justify-content-center
+                align-middle">
+            <section    
+                class="
+                    col-12 
+                    d-md-none
+                    m-0 
+                    p-0">
+                <article 
+                    class="
+                        col-12
+                        m-0 
+                        p-0">
+                    <div    
+                        class="
+                            d-flex
+                            h3Decoration
+                            col-12
+                            mt-5"
+                        data-h3="
+                            interests">
+                        <h3><strong>INTERESTS</strong></h3>
+                        <hr>
+                    </div>
+                    <div class="cardContentLeft mt-4 mb-4">
+                        <ul>
+                            <li class="ml-4 pl-3 pt-1">WEB DESIGN</li>
+                            <li class="ml-4 pl-3 pt-1">ELECTRONICS PROTOTYPING</li>
+                            <li class="ml-4 pl-3 pt-1">ASTROPHOTOGRAPHY</li>
+                        </ul>
+                    </div>
+                </article>
+                <article 
+                    class=" 
+                        col-12
+                        m-0 
+                        p-0"> 
+                    <div   
+                        class="
+                            d-flex
+                            h3Decoration 
+                            col-12
+                            mt-5"
+                        data-h3="
+                            connect">
+                        <h3><strong>CONNECT</strong></h3>
+                        <hr>
+                    </div>
+                    <div 
+                        class="
+                            cardContentLeft
+                            mt-4
+                            mt-2">
+                        <table class="w-100">
+                            <tr>
+                                <td class="iconTd">
+                                    <i class="bi bi-github"></i>
+                                </td>
+                                <td class="contentTd noPrint">
+                                    <a href="https://www.github.com/vesnathan">GitHub</a>
+                                </td>
+                                <td class="contentTd print">www.github.com/vesnathan</td>
+                            </tr>
+                            <tr>
+                                <td class="iconTd">
+                                    <i class="bi bi-linkedin"></i>
+                                </td>
+                                <td class="contentTd noPrint">
+                                    <a href="https://www.linkedin.com/in/nathan-loudon-719b3723/">LinkedIn</a>
+                                </td>
+                                <td class="contentTd print">www.linkedin.com/in/nathan-loudon-719b3723/</td>
+                            </tr>
+                        </table>
+                    </div>
+                </article>
+
+            </section>
+            
+            <div class="d-flex flex-wrap col-12 justify-content-center copy" >
+                <p class="col-12 justify-content-center">&copy;2022 Nathan Loudon</p>
+                <p class="col-12 justify-content-center">This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p>
+            </div>
+
+        </footer>
+    </div>
+</body>
+</html>

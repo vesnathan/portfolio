@@ -1,0 +1,477 @@
+:root {
+    --h2BarBG:              rgba(138, 152, 255, 0.3);
+    --h2BarDecorativeText:  rgba(57, 57, 57, 0.7);
+    --h3BarBG:              rgba(138, 152, 255, 0.3);
+    --h3BarDecorativeText:  rgba(181, 188, 238, 0.7);
+    --pageBG:               rgba(255,255,255,1);
+    --imgOverlayBG:         rgba(0,0,0,0.5);
+    --sideBarBG:            rgb(66, 89, 140);
+    --sideBarColor:         rgba(255,255,255,1);
+    --buttonHoverBG:        rgb(81, 100, 141);
+    --r80-100:               #04AA6D;
+    --r60-79:                #e49722;
+    --r0-59:                 #dc1010; 
+    --tdUnderline:          rgba(0,0,0,.05);  
+    --sliderBarEmpty:       rgba(0,0,0,.05);
+}
+
+* {box-sizing:border-box}   
+
+
+.contactFormInput {
+    width: 100%;
+}
+
+/* ---------------------------------------------------------------------- HEADERS AND RELATED */
+
+h1.name {
+    font-size:          180%;
+    margin-top:         20px;
+    text-align:         center;
+}
+.h2Decoration h2 {   
+    background-color:   var(--pageBG); 
+    margin:             0;
+    padding:            0 10px;
+    font-size:          100%;
+    margin-top:         -3px;
+}
+.h2Decoration {
+    padding:            0;
+    background-color:   var(--h2BarBG); 
+    position:           relative;
+    height:             15px;
+}
+.h2Decoration:after {
+    content:            attr(data-h2);
+    position:           absolute;
+    top:                -15px;
+    right:              10px;
+    font-family:        'The Nautigal', cursive;
+    font-size:          200%;
+    color:              var(--h2BarDecorativeText);
+}
+.h3Decoration h3 {   
+    background-color:   var(--sideBarBG); 
+    line-height:        100%;
+    margin:             0;
+    padding:            0 10px;
+    font-size:          100%;
+    margin-top:         -2px;
+}
+.h3Decoration {
+    padding:            0;
+    background-color:   var(--h3BarBG); 
+    position:           relative;
+    height:             15px;
+}
+.h3Decoration:after {
+    content:            attr(data-h3);
+    position:           absolute;
+    top:                -18px;
+    right:              10px;
+    font-family:        'The Nautigal', cursive;
+    font-size:          200%;
+    color:              var(--h3BarDecorativeText);
+}
+h4 {
+    font-size:          150%;
+    font-weight:        bold;
+}
+
+/* ---------------------------------------------------------------------- TABLES */
+
+.skillNameTd  {
+    width:              150px;
+    padding-left:       20px;
+}
+.skillTd, .skillNameTd {
+    border-bottom:      1px solid var(--tdUnderline);
+}
+
+.iconTd {
+    width:              20px;
+    padding-left:       20px;
+    padding-top:        5px;
+}
+.contentTd {
+    padding-left:       20px;
+}
+.contentTd a {
+    color:              var(--sideBarColor);
+    text-decoration:    none;
+}
+.contentTd a:hover {
+    color:              var(--sideBarColor);
+    text-decoration:    none;
+}
+
+/* ---------------------------------------------------------------------- FORM ELEMENTS/ANCHORS */
+.grecaptcha-badge { 
+    opacity:            0;
+}
+.button {
+    text-align:         center;
+    background-color:   var(--sideBarBG);
+    border: 0;
+    padding: 5px 10px;
+}
+.button:hover {
+    background-color:   var(--buttonHoverBG);
+}
+.button span {
+    cursor:             pointer;
+    display:            inline-block;
+    position:           relative;
+    transition:         0.5s;
+    text-decoration:    none;
+    color:              var(--pageBG);
+  }
+  .button span:after {
+    content:            '\00bb';
+    position:           absolute;
+    opacity:            0;
+    top:                -7px;
+    right:              -20px;
+    transition:         0.5s;
+    font-size:          150%;
+  }
+  .button:hover span {
+    padding-right:      25px;
+    color:              var(--pageBG);
+    text-decoration:    none;
+  }
+  .button:hover span:after {
+    opacity:            1;
+    right:              0;
+    color:              var(--pageBG);
+    text-decoration:    none;
+  }
+
+/* ---------------------------------------------------------------------- ANIMATIONS */
+
+.workHistoryTagAnimation            { animation: slideFromLeft 1s  forwards; }
+.Row-fadeIn                         { opacity: 0; } 
+.slideFromLeft                      { animation: slideFromLeft .5s forwards;  animation-delay:  0s; }
+
+@keyframes fadeIn                   { 0% { opacity: 0; top: 30px;    } 100% { opacity: 1; top: 0;  } } 
+@keyframes slideFromLeft            { 0% { opacity: 0; left: -30px;  } 100% { opacity: 1; left: 0; } } 
+
+.HTML-fill                          { width: 0; background-color: var(--r80-100); animation: HTML-fill         .5s  forwards;  animation-delay: .0s;  }
+.CSS-fill                           { width: 0; background-color: var(--r80-100); animation: CSS-fill          .5s  forwards;  animation-delay: .1s;  } 
+.Bootstrap-fill                     { width: 0; background-color: var(--r80-100); animation: Bootstrap-fill    .5s  forwards;  animation-delay: .2s;  }
+.JavaScript-fill                    { width: 0; background-color: var(--r80-100); animation: JavaScript-fill   .5s  forwards;  animation-delay: .3s;  } 
+.JQuery-fill                        { width: 0; background-color: var(--r80-100); animation: JQuery-fill       .5s  forwards;  animation-delay: .4s;  }  
+.React-fill                         { width: 0; background-color: var(--r60-79);  animation: React-fill        .5s  forwards;  animation-delay: .5s;  }  
+.WebSockets-fill                    { width: 0; background-color: var(--r60-79);  animation: WebSockets-fill   .5s  forwards;  animation-delay: .6s;  }
+.Docker-fill                        { width: 0; background-color: var(--r0-59);   animation: Docker-fill       .5s  forwards;  animation-delay: .7s;  } 
+.Nginx-fill                         { width: 0; background-color: var(--r0-59);   animation: Docker-fill       .5s  forwards;  animation-delay: .7s;  } 
+.PHP-fill                           { width: 0; background-color: var(--r60-79);  animation: PHP-fill          .5s  forwards;  animation-delay: .8s;  }  
+.Apache-fill                        { width: 0; background-color: var(--r0-59);   animation: Apache-fill       .5s  forwards;  animation-delay: .9s;  }
+.Mongo-fill                         { width: 0; background-color: var(--r0-59);   animation: Mongo-fill        .5s  forwards;  animation-delay: 1.0s; } 
+.MySql-fill                         { width: 0; background-color: var(--r80-100); animation: MySql-fill        .5s  forwards;  animation-delay: 1.1s; }  
+.AWS-fill                           { width: 0; background-color: var(--r0-59);   animation: AWS-fill          .5s  forwards;  animation-delay: 1.2s; }
+ 
+.HTML-Row-fadeIn                    { animation: fadeIn 1s  forwards;  animation-delay: .0s;  } 
+.CSS-Row-fadeIn                     { animation: fadeIn 1s  forwards;  animation-delay: .1s;  } 
+.Bootstrap-Row-fadeIn               { animation: fadeIn 1s  forwards;  animation-delay: .2s;  }
+.JavaScript-Row-fadeIn              { animation: fadeIn 1s  forwards;  animation-delay: .3s;  } 
+.JQuery-Row-fadeIn                  { animation: fadeIn 1s  forwards;  animation-delay: .4s;  } 
+.React-Row-fadeIn                   { animation: fadeIn 1s  forwards;  animation-delay: .5s;  } 
+.WebSockets-Row-fadeIn              { animation: fadeIn 1s  forwards;  animation-delay: .6s;  } 
+.Docker-Row-fadeIn                  { animation: fadeIn 1s  forwards;  animation-delay: .7s;  } 
+.Nginx-Row-fadeIn                   { animation: fadeIn 1s  forwards;  animation-delay: .7s;  } 
+.PHP-Row-fadeIn                     { animation: fadeIn 1s  forwards;  animation-delay: .8s;  } 
+.Apache-Row-fadeIn                  { animation: fadeIn 1s  forwards;  animation-delay: .9s;  } 
+.Mongo-Row-fadeIn                   { animation: fadeIn 1s  forwards;  animation-delay: 1.0s; } 
+.MySql-Row-fadeIn                   { animation: fadeIn 1s  forwards;  animation-delay: 1.1s; } 
+.AWS-Row-fadeIn                     { animation: fadeIn 1s  forwards;  animation-delay: 1.2s; }  
+
+@keyframes HTML-fill                { 100%{ width: 80%; } }
+@keyframes CSS-fill                 { 100%{ width: 80%; } }
+@keyframes Bootstrap-fill           { 100%{ width: 75%; } }
+@keyframes JavaScript-fill          { 100%{ width: 85%; } } 
+@keyframes JQuery-fill              { 100%{ width: 85%; } }
+@keyframes React-fill               { 100%{ width: 60%; } } 
+@keyframes WebSockets-fill          { 100%{ width: 50%; } }
+@keyframes Docker-fill              { 100%{ width: 20%; } }
+@keyframes Nginx-fill               { 100%{ width: 20%; } }
+@keyframes PHP-fill                 { 100%{ width: 40%; } }
+@keyframes Apache-fill              { 100%{ width: 20%; } }
+@keyframes Mongo-fill               { 100%{ width: 30%; } }
+@keyframes MySql-fill               { 100%{ width: 70%; } }
+@keyframes AWS-fill                 { 100%{ width: 20%; } }
+
+
+
+.Communication-fill                 { width: 0; background-color: var(--r80-100);  animation: Communication-fill        .5s  forwards;  animation-delay:  0s;  }
+.Teamwork-fill                      { width: 0; background-color: var(--r80-100);  animation: Teamwork-fill             .5s  forwards;  animation-delay: .1s;  } 
+.Organisation-fill                  { width: 0; background-color: var(--r80-100);  animation: Organisation-fill         .5s  forwards;  animation-delay: .2s;  } 
+.Leadership-fill                    { width: 0; background-color: var(--r80-100);  animation: Leadership-fill           .5s  forwards;  animation-delay: .3s;  }  
+.Reliability-fill                   { width: 0; background-color: var(--r80-100);  animation: Reliability-fill          .5s  forwards;  animation-delay: .4s;  }  
+.Self-discipline-fill               { width: 0; background-color: var(--r80-100);  animation: Self-discipline-fill      .5s  forwards;  animation-delay: .5s;  }
+.Integrity-fill                     { width: 0; background-color: var(--r80-100);  animation: Integrity-fill            .5s  forwards;  animation-delay: .6s;  } 
+.Critical-Thinking-fill             { width: 0; background-color: var(--r80-100);  animation: Critical-Thinking-fill    .5s  forwards;  animation-delay: .7s;  }  
+.Problem-Solving-fill               { width: 0; background-color: var(--r80-100);  animation: Problem-Solving-fill      .5s  forwards;  animation-delay: .8s;  } 
+.Attention-to-Detali-fill           { width: 0; background-color: var(--r60-79);   animation: Attention-to-Detali-fill  .5s  forwards;  animation-delay: .9s;  }
+
+.Communication-Row-fadeIn           { animation: fadeIn 1s  forwards; animation-delay:  0s; }  
+.Teamwork-Row-fadeIn                { animation: fadeIn 1s  forwards; animation-delay: .1s; } 
+.Organisation-Row-fadeIn            { animation: fadeIn 1s  forwards; animation-delay: .2s; }
+.Leadership-Row-fadeIn              { animation: fadeIn 1s  forwards; animation-delay: .3s; }
+.Reliability-Row-fadeIn             { animation: fadeIn 1s  forwards; animation-delay: .4s; } 
+.Self-discipline-Row-fadeIn         { animation: fadeIn 1s  forwards; animation-delay: .5s; } 
+.Integrity-Row-fadeIn               { animation: fadeIn 1s  forwards; animation-delay: .6s; }  
+.Critical-Thinking-Row-fadeIn       { animation: fadeIn 1s  forwards; animation-delay: .7s; } 
+.Problem-Solving-Row-fadeIn         { animation: fadeIn 1s  forwards; animation-delay: .8s; } 
+.Attention-to-Detali-Row-fadeIn     { animation: fadeIn 1s  forwards; animation-delay: .9s; } 
+
+@keyframes Communication-fill       { 100%{ width: 90%;  } }
+@keyframes Teamwork-fill            { 100%{ width: 90%;  } }
+@keyframes Organisation-fill        { 100%{ width: 95%;  } } 
+@keyframes Leadership-fill          { 100%{ width: 80%;  } }
+@keyframes Reliability-fill         { 100%{ width: 100%; } } 
+@keyframes Self-discipline-fill     { 100%{ width: 95%;  } }
+@keyframes Integrity-fill           { 100%{ width: 100%; } }
+@keyframes Critical-Thinking-fill   { 100%{ width: 90%;  } }
+@keyframes Problem-Solving-fill     { 100%{ width: 90%;  } }
+@keyframes Attention-to-Detali-fill { 100%{ width: 65%;  } }
+
+.Excel-fill                         { width: 0; background-color: var(--r80-100);  animation: Excel-fill          .5s forwards; animation-delay:  .0s;  } 
+.Photoshop-fill                     { width: 0; background-color: var(--r80-100);  animation: Photoshop-fill      .5s forwards; animation-delay:  .1s;  } 
+.Visual-Studio-fill                 { width: 0; background-color: var(--r80-100);  animation: Visual-Studio-fill  .5s forwards; animation-delay:  .2s;  } 
+.Premiere-Pro-fill                  { width: 0; background-color: var(--r80-100);  animation: Premiere-Pro-fill   .5s forwards; animation-delay:  .3s;  } 
+.After-Effects-fill                 { width: 0; background-color: var(--r60-79);   animation: After-Effects-fill  .5s forwards; animation-delay:  .4s;  } 
+.Powerpoint-fill                    { width: 0; background-color: var(--r80-100);  animation: Powerpoint-fill     .5s forwards; animation-delay:  .5s;  } 
+.Putty-fill                         { width: 0; background-color: var(--r60-79);   animation: Putty-fill          .5s forwards; animation-delay:  .6s;  } 
+
+.Excel-Row-fadeIn                   { animation: fadeIn 1s  forwards;  animation-delay: .0s; } 
+.Photoshop-Row-fadeIn               { animation: fadeIn 1s  forwards;  animation-delay: .1s; } 
+.Visual-Studio-Row-fadeIn           { animation: fadeIn 1s  forwards;  animation-delay: .2s; } 
+.Premiere-Pro-Row-fadeIn            { animation: fadeIn 1s  forwards;  animation-delay: .3s; } 
+.After-Effects-Row-fadeIn           { animation: fadeIn 1s  forwards;  animation-delay: .4s; } 
+.Powerpoint-Row-fadeIn              { animation: fadeIn 1s  forwards;  animation-delay: .5s; } 
+.Putty-Row-fadeIn                   { animation: fadeIn 1s  forwards;  animation-delay: .6s; } 
+              
+@keyframes Excel-fill               { 100%{ width: 95%; } } /* attr(data-rating);?? */
+@keyframes Photoshop-fill           { 100%{ width: 95%; } }
+@keyframes Visual-Studio-fill       { 100%{ width: 80%; } }
+@keyframes Premiere-Pro-fill        { 100%{ width: 80%; } }
+@keyframes After-Effects-fill       { 100%{ width: 70%; } }
+@keyframes Powerpoint-fill          { 100%{ width: 95%; } }
+@keyframes Putty-fill               { 100%{ width: 70%; } }
+
+/* ---------------------------------------------------------------------- LEFT SIDE */
+
+#leftSide {
+    background-color:   var(--sideBarBG);
+    color:              var(--sideBarColor);
+    background:         linear-gradient(0deg, var(--sideBarBG)50%,rgb(41, 65, 155)  100%);
+}
+#photo {
+    width:              80%;
+    padding-top:        80%;
+    outline:            1px solid var(--sideBarColor);
+    border-radius:      50%;
+    background-image:   url(../images/me.jpg);
+    background-size:    cover;
+}
+#photoWrapper {
+    margin:             auto;
+}
+#brandStatement {
+    text-align:         center;
+}
+#subTitle {
+    text-align:         center;
+    font-size:          120%;
+}
+.cardContentLeft {
+    font-size:          85%;
+    Text-Transform:     uppercase;
+}
+.cardContentLeft ul {
+    list-style-type:    square;
+    padding-left:       15px;
+}
+.skillContainer {
+    width:              100%; 
+    background-color:   var(--sliderBarEmpty);
+    height:             20px;
+}  
+.skills {
+    text-align:         right; 
+    color:              white; 
+}
+#contactArticle {
+    position: relative;
+    height: 180px;
+}
+#contactDivSpinner {
+	color: #fff;
+    position: absolute;
+    height: 100%;
+}
+
+
+
+
+
+
+/* ---------------------------------------------------------------------- RIGHT SIDE */
+
+#menuIconHolder {
+    display:            inline;
+    float:              right;
+}
+#menuIconHolder i {
+    padding-left:       20px;
+}
+#printButton {
+    cursor:             pointer;
+    transition:         transform .2s ease-in-out;
+}
+#printButton:hover {
+    transform:          scale(1.5);
+}
+nav {
+    font-family:        'The Nautigal', cursive;
+    font-size:          200%;
+    color:              var(--h2BarDecorativeText);   
+}
+nav ul {
+    display:            inline;
+}
+nav li {
+    display:            inline;
+    padding:            5px 20px;
+    font-weight:        bold;
+    cursor:             pointer;
+}
+nav li.active{
+   background-color:    var(--sideBarBG);
+   color:               #fff;
+} 
+nav li:hover {
+    background-color:   var(--buttonHoverBG);
+    color:              #fff;
+} 
+nav .smallScreenMenuUl {
+    color:              #fff;
+} 
+.smallScreenMenuUl li.active {
+    background-color:   var(--buttonHoverBG); 
+    
+}
+.smallScreenMenuUl li:hover {
+    background-color:   var(--sideBarBG); 
+}
+.cardContentRight {
+    font-size:          85%;
+    position:           relative;   
+}
+.cardContentRightImg {
+    width:              100%;
+    height:             250px;
+    background-color:   var(--h2BarBG);
+    background-size:    cover;
+    color:              var(--sideBarColor);
+}
+.cardContentRightImg.gsb{
+    background-image:   url(../images/gsb.jpg);
+}
+.cardContentRightImg.timer{
+    background-image:   url(../images/timer.jpg);
+}
+.cardContentRightImg.eventPlatform{
+    background-image:   url(../images/eventPlatform.jpg);
+}
+.cardContentRightImg.cheapDate{
+    background-image:   url(../images/cheapDate.jpg);
+}
+.cardContentRightTechnology {
+    background-color:   var(--imgOverlayBG);
+    border-right:       1px solid var(--h2BarBG);
+    font-weight:        bold;
+}
+.cardContentRightTechnology ul {
+    list-style-type:    square;
+}
+.cardContentRight li {
+    list-style-type:    square;
+    padding-left:       15px;
+}
+
+
+
+
+.workHistoryTag {
+    background-image:   url(../images/tag.png);
+    background-size:    100% 100%;
+    width:              90px;
+    height:             30px;
+    color:              #fff;
+    font-weight:        bold;
+    font-size:          130%;
+    padding-left:       20px;
+    position:           absolute;
+    opacity:            0;
+}
+.workHistory img {
+    width:              90px;   
+    position:           absolute;
+    top:                80px;
+}
+.workHistoryImgHolder {
+    padding:            0;
+    margin:             0;
+    position:           relative;
+    min-height:         40px;
+}
+.jobDetails {
+    background-color:   var(--pageBG);
+}
+.workHistoryProject {
+    margin-left:        20px;
+}
+.buttonHolder  {
+    margin-left:        10px;
+}
+
+
+
+
+
+
+
+/* ---------------------------------------------------------------------- FOOTER */
+
+footer {
+    background-color:   var(--sideBarBG);
+    color:              #fff;
+    margin-bottom:      50px;
+}
+.print { 
+    display:            none; 
+}
+
+/* ---------------------------------------------------------------------- MEDIA QUERIES */
+
+
+@media print {
+    * {
+        /* Chrome, Safari, Edge */
+        -webkit-print-color-adjust: exact !important; 
+        
+        /*Firefox*/
+        color-adjust:   exact !important;                 
+    }
+   
+    .noPrint { 
+        display:        none !important;}
+    .print { 
+        display:        block !important;}
+    .copy { 
+        margin-top:     50px; }
+
+}
