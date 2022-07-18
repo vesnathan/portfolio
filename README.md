@@ -42,7 +42,7 @@
 <a id="USAGE"></a>
 ## USAGE
 
-    from the dolder with the files in, run  
+    from the folder with the files in, run  
     docker run -v $(pwd):/app -p 3000:3000 -d --name  portfolio portfolio-image  
 
 <a id="CONTRIBUTE"></a>
