@@ -27,17 +27,16 @@
 
 <a id="SCREENSHOTS"></a>
 ## SCREENSHOTS
-<img src="Capture.JPG" />
+<img src="./assets/images/screenshots/Capture.JPG" width="500"/>
 
-
-<img src="Capture2.JPG" />
+<img src="./assets/images/screenshots/Capture2.JPG" width="500"/>
 
 
 <a id="INSTALLATION"></a>
 ## INSTALLATION
 
-   Install Docker and Docker Compose on a server with SSL certificates
-   Copy these files to the server
+   Install Docker and Docker Compose on a server with SSL certificates \n
+   Copy these files to the server \n
 
 <a id="USAGE"></a>
 ## USAGE
