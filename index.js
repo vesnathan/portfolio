@@ -1,5 +1,5 @@
-require("processenv").config();
-const { _AWS_AKI, _AWS_SAK, _AWS_REGION } = require("./config/config.js");
+require("dotenv").config();
+const { _AWS_AKI, _AWS_SAK, _AWS_REGION,  _RECAPTCHA_SECRET_KEY} = require("./config/config.js");
 const express = require("express");
 const axios = require("axios");
 const app = express();
@@ -28,7 +28,7 @@ const myDetails = {
 
 app.get("/contactDetails", (req,res) => { res.send(myDetails); });
 
-const secretKey = "";
+const secretKey =   _RECAPTCHA_SECRET_KEY;
 app.get("/recaptcha", (req,res) => { 
     
     axios.post('https://www.google.com/recaptcha/api/siteverify', undefined, {
@@ -45,7 +45,7 @@ app.get("/recaptcha", (req,res) => {
             res.send(myDetails);
         } 
         else {
-            res.send("ERROR: "+response.data);  
+            res.send(response);  
         }
     })
     .catch((err) => {

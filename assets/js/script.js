@@ -158,25 +158,25 @@ $(function() {
 
     // email button listener
     $("#emailButton").on("click",(e) => {
-        let inputName = $("#inputName").val();
-        let inputEmail = $("#inputEmail").val();
-        let inputText = $("#inputText").val();
-        let data = {
-            inputName: $("#inputName").val(),
-            inputEmail: $("#inputEmail").val(),
-            inputText: $("#inputText").val()
-        }
+        // let inputName = $("#inputName").val();
+        // let inputEmail = $("#inputEmail").val();
+        // let inputText = $("#inputText").val();
+        // let data = {
+        //     inputName: $("#inputName").val(),
+        //     inputEmail: $("#inputEmail").val(),
+        //     inputText: $("#inputText").val()
+        // }
         
-        fetch("/email", {
-            method: 'POST',
-            headers: {
-              'Accept': 'application/json, text/plain, */*',
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-        .then(res => res.json())
-        .then(res => console.log(res));
+        // fetch("/email", {
+        //     method: 'POST',
+        //     headers: {
+        //       'Accept': 'application/json, text/plain, */*',
+        //       'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(data)
+        // })
+        // .then(res => res.json())
+        // .then(res => console.log(res));
     });
 
     // big screen menu button listener
@@ -518,7 +518,8 @@ function onloadCallback() {
                     
                     }  
                     else {
-                        ("#loadContactDetails").removeClass("d-none").addClass('d-block');
+                        $("#loadContactDetails").removeClass("d-none").addClass('d-block');
+                        $("#contactDivSpinner").removeClass("d-flex").addClass('d-none');
                     }     
                 })
                 .catch((err) => {console.log(err); });   
