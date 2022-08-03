@@ -157,26 +157,26 @@ $(function() {
     });
 
     // email button listener
-    $("#emailButton").on("click",(e) => {
-        // let inputName = $("#inputName").val();
-        // let inputEmail = $("#inputEmail").val();
-        // let inputText = $("#inputText").val();
-        // let data = {
-        //     inputName: $("#inputName").val(),
-        //     inputEmail: $("#inputEmail").val(),
-        //     inputText: $("#inputText").val()
-        // }
+    $("#emailSendButton").on("click",(e) => {
+        let inputName = $("#inputName").val();
+        let inputEmail = $("#inputEmail").val();
+        let inputText = $("#inputText").val();
+        let data = {
+            inputName: $("#inputName").val(),
+            inputEmail: $("#inputEmail").val(),
+            inputText: $("#inputText").val()
+        }
         
-        // fetch("/email", {
-        //     method: 'POST',
-        //     headers: {
-        //       'Accept': 'application/json, text/plain, */*',
-        //       'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(data)
-        // })
-        // .then(res => res.json())
-        // .then(res => console.log(res));
+        fetch("/email", {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json, text/plain, */*',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(res => console.log(res));
     });
 
     // big screen menu button listener
@@ -478,7 +478,7 @@ function onloadCallback() {
                             <button type="button" class="button col-4" data-dismiss="modal" aria-label="Close">
                                 <span>CANCEL</span>
                             </button>
-                            <button type="button" class="button col-4" aria-label="Send"><span>SEND</span></button>`;
+                            <button type="button" class="button col-4" aria-label="Send" id="emailSendButton"><span>SEND</span></button>`;
                         let title = `
                             <h5 class="modal-title" id="mainModalLabel">EMAIL</h5>`;
                         let body = `
