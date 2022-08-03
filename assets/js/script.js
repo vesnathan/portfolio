@@ -158,7 +158,25 @@ $(function() {
 
     // email button listener
     $("#emailButton").on("click",(e) => {
-        console.log(e);
+        let inputName = $("#inputName").val();
+        let inputEmail = $("#inputEmail").val();
+        let inputText = $("#inputText").val();
+        let data = {
+            inputName: $("#inputName").val(),
+            inputEmail: $("#inputEmail").val(),
+            inputText: $("#inputText").val()
+        }
+        
+        fetch("/email", {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json, text/plain, */*',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(res => console.log(res));
     });
 
     // big screen menu button listener
@@ -466,28 +484,28 @@ function onloadCallback() {
                         let body = `
                             <form class="email-me" method="post">
                                 <fieldset>
-                                    <label class="mt-2 col-12" for="full-name">
+                                    <label class="mt-2 col-12" for="inputName">
                                         Full Name
                                         <span class="required">
                                             (required)
                                         </span>
                                         <input type="text" class="form-control col-12" id="inputName" aria-describedby="emailNathan" placeholder="Enter name">
                                     </label>
-                                    <label  class="mt-2 col-12" for="email">
+                                    <label  class="mt-2 col-12" for="inputEmail">
                                         Email
                                         <span class="required">
                                                 (required)
                                         </span>
-                                        <input type="email" class="form-control col-12" id="inputEmail1" aria-describedby="emailNathan" placeholder="Enter email">
+                                        <input type="email" class="form-control col-12" id="inputEmail" aria-describedby="emailNathan" placeholder="Enter email">
                                     </label>
                                 </fieldset>
                                 <fieldset>
-                                    <label  class="mt-2 col-12" for='text-comments'>
+                                    <label  class="mt-2 col-12" for='inputText'>
                                         Please leave your comments or questions here
                                         <span class="required">
                                             (required)
                                         </span>
-                                        <textarea  class="form-control col-12"  id='text-comments' required=''></textarea>
+                                        <textarea  class="form-control col-12"  id='inputText' required=''></textarea>
                                     </label>
                                 </fieldset>
                             </form>`;

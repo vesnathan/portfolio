@@ -1,10 +1,22 @@
+require("processenv").config();
+const { _AWS_AKI, _AWS_SAK, _AWS_REGION } = require("./config/config.js");
 const express = require("express");
 const axios = require("axios");
 const app = express();
 
+
+var AWS = require('aws-sdk');
+AWS.config.update({region: 'REGION'});
+
 app.use(express.static(__dirname + '/'));
+app.use(express.json());
+app.use(express.urlencoded());
 
 app.get("/", (req,res) => { res.sendFile(__dirname + "/index.html"); });
+app.post("/email", (req,res) => { 
+    console.log(req.body);
+    res.json({"status":"success"});
+});
 const myDetails = { 
     success: true,
     email:"vesnathan@gmail.com",
